@@ -1,15 +1,15 @@
-import React from "react";
-import { useState } from "react";
-import SlideDown from "react-slidedown";
-import "react-slidedown/lib/slidedown.css";
 import clsx from "clsx";
+import { useState } from "react";
+import { SlideDown } from "react-slidedown";
+import "react-slidedown/lib/slidedown.css";
 
 const FaqItem = ({ item, index }) => {
   const [activeId, setActiveId] = useState(null);
+
   const active = activeId === item.id;
 
   return (
-    <div className={" relative z-2 mb-16"}>
+    <div className="relative z-2 mb-16">
       <div
         className="group relative flex cursor-pointer items-center justify-between gap-10 px-7"
         onClick={() => {
@@ -43,7 +43,7 @@ const FaqItem = ({ item, index }) => {
 
       <SlideDown>
         {activeId === item.id && (
-          <div className="body-3 px-7 py-3.5 ">{item.answer}</div>
+          <div className="body-3 px-7 py-3.5">{item.answer}</div>
         )}
       </SlideDown>
 
@@ -59,5 +59,4 @@ const FaqItem = ({ item, index }) => {
     </div>
   );
 };
-
 export default FaqItem;

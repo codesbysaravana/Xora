@@ -1,9 +1,9 @@
 import { Element } from "react-scroll";
-import clsx from "clsx";
 import { useState } from "react";
+import clsx from "clsx";
 import CountUp from "react-countup";
+import { plans } from "../constants/index.jsx";
 import Button from "../components/Button.jsx";
-import { plans } from "../constants/index.js";
 
 const Pricing = () => {
   const [monthly, setMonthly] = useState(false);
@@ -17,7 +17,7 @@ const Pricing = () => {
               Flexible pricing for teams of all sizes
             </h3>
 
-            <div className="relative z-4 mx-auto flex w-[375px] rounded-3xl border-[3px] border-s4/25 bg-s1/50 p-2 backdrop-blur-[6px] max-md:w-[310px] ">
+            <div className="relative z-4 mx-auto flex w-[375px] rounded-3xl border-[3px] border-s4/25 bg-s1/50 p-2 backdrop-blur-[6px] max-md:w-[310px]">
               <button
                 className={clsx("pricing-head_btn", monthly && "text-p4")}
                 onClick={() => setMonthly(true)}
@@ -25,7 +25,7 @@ const Pricing = () => {
                 Monthly
               </button>
               <button
-                className={clsx("pricing-head_btn", monthly && "text-p4")}
+                className={clsx("pricing-head_btn", !monthly && "text-p4")}
                 onClick={() => setMonthly(false)}
               >
                 Annual
@@ -48,7 +48,7 @@ const Pricing = () => {
                 className="relative z-2"
               />
               <img
-                src="/images/bg-outlines-fill.svg"
+                src="/images/bg-outlines-fill.png"
                 width={960}
                 height={380}
                 alt="outline"
@@ -57,7 +57,7 @@ const Pricing = () => {
             </div>
           </div>
 
-          {/*pricing sections*/}
+          {/*  pricing section*/}
           <div className="scroll-hide relative z-2 -mt-12 flex items-start max-xl:gap-5 max-xl:overflow-auto max-xl:pt-6">
             {plans.map((plan, index) => (
               <div
@@ -92,7 +92,7 @@ const Pricing = () => {
                 >
                   <div
                     className={clsx(
-                      "small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4  py-1.5 uppercased",
+                      "small-2 rounded-20 relative z-2 mx-auto mb-6 border-2 px-4 py-1.5 uppercase",
                       index === 1 ? "border-p3 text-p3" : "border-p1 text-p1",
                     )}
                   >
@@ -115,7 +115,9 @@ const Pricing = () => {
                         preserveValue
                       />
                     </div>
-                    <div className="small-1 relative top-3 ml-1 ">/ mo</div>
+                    <div className="small-1 relative top-3 ml-1 uppercase">
+                      / mo
+                    </div>
                   </div>
                 </div>
 

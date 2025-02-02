@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
-
-/*note max-lg is and media query for all the width&height adjustments based on diff screens*/
-/*NOTE AGAIN: plain lg means for all the widths and heights*/
-/*border- s24/25 thats a color */
 
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -50,7 +46,7 @@ const Header = () => {
 
         <div
           className={clsx(
-            "w-full max-lg:fixxed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0",
+            "w-full max-lg:fixed max-lg:top-0 max-lg:left-0 max-lg:w-full max-lg:bg-s2 max-lg:opacity-0",
             isOpen ? "max-lg:opacity-100" : "max-lg:pointer-events-none",
           )}
         >
@@ -62,6 +58,7 @@ const Header = () => {
                   <div className="dot" />
                   <NavLink title="pricing" />
                 </li>
+
                 <li className="nav-logo">
                   <LinkScroll
                     to="hero"
@@ -89,7 +86,7 @@ const Header = () => {
               </ul>
             </nav>
 
-            <div className="lg:hidden black absolute top-1/2 left-0 w-[960px] h-[360px] translate-x-[-290px] -translate-y-1/2 rotate-90">
+            <div className="lg:hidden block absolute top-1/2 left-0 w-[960px] h-[380px] translate-x-[-290px] -translate-y-1/2 rotate-90">
               <img
                 src="/images/bg-outlines.svg"
                 width={960}
@@ -115,7 +112,7 @@ const Header = () => {
           <img
             src={`/images/${isOpen ? "close" : "magic"}.svg`}
             alt="magic"
-            className="size=1/2 object-contain"
+            className="size-1/2 object-contain"
           />
         </button>
       </div>

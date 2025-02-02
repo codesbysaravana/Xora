@@ -15,6 +15,7 @@ const Button = ({
         <span className="absolute -left-[1px]">
           <Marker markerFill={markerFill} />
         </span>
+
         {icon && (
           <img
             src={icon}
@@ -31,7 +32,6 @@ const Button = ({
       <span className="glow-before glow-after" />
     </>
   );
-
   return href ? (
     <a
       className={clsx(
@@ -44,12 +44,14 @@ const Button = ({
     </a>
   ) : (
     <button
-      className={clsx("relative p-0.5 g5 rounded-2xl shadow-500 group")}
+      className={clsx(
+        "relative p-0.5 g5 rounded-2xl shadow-500 group",
+        containerClassName,
+      )}
       onClick={onClick}
     >
       <Inner />
     </button>
   );
 };
-
 export default Button;
