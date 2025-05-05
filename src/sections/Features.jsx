@@ -46,7 +46,7 @@ const Features = () => {
                     <img
                       src={icon}
                       alt={title}
-                      className="size-17/20 object-contain z-20"
+                      className="size-17/20 object-contain z-20npm"
                     />
                   </div>
 
